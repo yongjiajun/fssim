@@ -52,6 +52,6 @@ if [[ $REPLY =~ ^[Yy]$ ]] || [ -z $REPLY ]; then
     rosdep update
 
     # Install the dependencies
-    rosdep install --from-paths "${ABSOLUTE_PATH}/" -r -i -y || { printf "[${red}ROSDEP FAILED${end}]\n" ;}
+    rosdep install --from-paths "${ABSOLUTE_PATH}/" -r -i --rosdistro=melodic -y --os=ubuntu:bionic || { printf "[${red}ROSDEP FAILED${end}]\n" ;}
     
 fi
